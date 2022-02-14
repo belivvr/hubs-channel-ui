@@ -15,7 +15,7 @@
     "skipLibCheck": true,
     "strict": true,
     "paths": {
-      "@belivvr/hubs-channel-ui": ["./src/index.ts"]
+      "@belivvr/hubs-channel-ui": ["./src/index.tsx"]
     }
   },
   "include": ["./src"]
