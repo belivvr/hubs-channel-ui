@@ -6,11 +6,11 @@
     "emitDeclarationOnly": true,
     "noEmit": false,
     "paths": {
-      "@belivvr/aframe-react": ["./src/index.tsx"]
+      "@belivvr/aframe-react": ["./src/index.ts"]
     }
   },
   "files": [
-    "./src/index.tsx"
+    "./src/index.ts"
   ],
   "exclude": ["./src/**/*", "./tests/**/*"]
 }
