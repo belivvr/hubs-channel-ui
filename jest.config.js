@@ -37,6 +37,7 @@ module.exports = {
         ],
       },
     ],
+    '^.+\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/tests/fileMock.js'
   },
   transformIgnorePatterns: [
     '/node_modules/',
