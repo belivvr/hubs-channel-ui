@@ -6,6 +6,7 @@ import resolve from 'rollup-plugin-node-resolve'
 import commonJS from 'rollup-plugin-commonjs'
 import visualizer from 'rollup-plugin-visualizer'
 import replace from '@rollup/plugin-replace'
+import svg from 'rollup-plugin-svg'
 
 const external = ['react', 'react-dom', '@belivvr/hubs-channel-ui']
 
@@ -41,6 +42,7 @@ export default inputSrcs
           babel(babelConfig),
           commonJS(),
           externalDeps(),
+          svg(),
         ],
       },
       {
@@ -57,6 +59,7 @@ export default inputSrcs
           replace({
             'process.env.NODE_ENV': `"production"`,
             delimiters: ['', ''],
+            preventAssignment: true,
           }),
           resolve(resolveConfig),
           babel(babelConfig),
@@ -68,6 +71,7 @@ export default inputSrcs
             filename: 'stats.json',
             json: true,
           }),
+          svg(),
         ],
       },
     ]

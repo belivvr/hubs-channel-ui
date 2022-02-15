@@ -97,6 +97,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup-plugin-node-resolve", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:5.2.0"],
             ["rollup-plugin-peer-deps-external", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:2.2.4"],
             ["rollup-plugin-size", "npm:0.2.2"],
+            ["rollup-plugin-svg", "npm:2.0.0"],
             ["rollup-plugin-terser", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:7.0.2"],
             ["rollup-plugin-visualizer", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:5.5.2"],
             ["type-fest", "npm:2.5.2"],
@@ -5476,6 +5477,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup-plugin-node-resolve", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:5.2.0"],
             ["rollup-plugin-peer-deps-external", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:2.2.4"],
             ["rollup-plugin-size", "npm:0.2.2"],
+            ["rollup-plugin-svg", "npm:2.0.0"],
             ["rollup-plugin-terser", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:7.0.2"],
             ["rollup-plugin-visualizer", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:5.5.2"],
             ["type-fest", "npm:2.5.2"],
@@ -15326,6 +15328,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["estree-walker", [
+        ["npm:0.2.1", {
+          "packageLocation": "./.yarn/cache/estree-walker-npm-0.2.1-9936e19104-eea29a6ab0.zip/node_modules/estree-walker/",
+          "packageDependencies": [
+            ["estree-walker", "npm:0.2.1"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:0.6.1", {
           "packageLocation": "./.yarn/cache/estree-walker-npm-0.6.1-fe92d0e1f6-9d6f82a492.zip/node_modules/estree-walker/",
           "packageDependencies": [
@@ -23199,6 +23208,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["rollup-plugin-svg", [
+        ["npm:2.0.0", {
+          "packageLocation": "./.yarn/cache/rollup-plugin-svg-npm-2.0.0-bfe58a0e2a-60a0d9c42c.zip/node_modules/rollup-plugin-svg/",
+          "packageDependencies": [
+            ["rollup-plugin-svg", "npm:2.0.0"],
+            ["rollup-pluginutils", "npm:1.5.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["rollup-plugin-terser", [
         ["npm:7.0.2", {
           "packageLocation": "./.yarn/cache/rollup-plugin-terser-npm-7.0.2-3f55469f5a-af84bb7a7a.zip/node_modules/rollup-plugin-terser/",
@@ -23252,6 +23271,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["rollup-pluginutils", [
+        ["npm:1.5.2", {
+          "packageLocation": "./.yarn/cache/rollup-pluginutils-npm-1.5.2-ae09e53294-8c669c0b3d.zip/node_modules/rollup-pluginutils/",
+          "packageDependencies": [
+            ["rollup-pluginutils", "npm:1.5.2"],
+            ["estree-walker", "npm:0.2.1"],
+            ["minimatch", "npm:3.0.4"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:2.8.2", {
           "packageLocation": "./.yarn/cache/rollup-pluginutils-npm-2.8.2-f554dd6ac5-339fdf866d.zip/node_modules/rollup-pluginutils/",
           "packageDependencies": [
