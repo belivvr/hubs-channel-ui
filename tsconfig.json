@@ -18,5 +18,5 @@
       "@belivvr/hubs-channel-ui": ["./src/index.ts"]
     }
   },
-  "include": ["./src"]
+  "include": ["./src", "./types.d.ts"]
 }
