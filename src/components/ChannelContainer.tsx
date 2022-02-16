@@ -31,7 +31,10 @@ export const defaultMessage = 'Channels';
  * <ChannelContainer
  *   Sidebar={Sidebar}
  *   CloseButton={CloseButton}
+ *   usePrivateChannel={usePrivateChannel}
+ *   error={isPrivateChannelError}
  *   onClose={() => this.setSidebar(null)}
+ *   onClickPrivateChannelButton={handleClickPrivateChannelButton}
  * />
  * ```
  */

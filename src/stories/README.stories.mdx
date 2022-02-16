@@ -50,11 +50,20 @@ import {
 Find `hub.js` in `this.state.sidebarId ? (` and paste under this
 
 ```tsx
+function handleClickPrivateChannelButton(channel) {
+  // if you want to use private channel...
+}
+
+// ...
+
 {this.state.sidebarId === "channels" && (
   <ChannelContainer
     Sidebar={Sidebar}
     CloseButton={CloseButton}
+    usePrivateChannel={usePrivateChannel}
+    error={isPrivateChannelError}
     onClose={() => this.setSidebar(null)}
+    onClickPrivateChannelButton={handleClickPrivateChannelButton}
   />
 )}
 ```
