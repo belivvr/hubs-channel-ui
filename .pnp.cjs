@@ -68,6 +68,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-jest", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:27.4.2"],
             ["babel-loader", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:8.2.3"],
             ["babel-plugin-const-enum", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:1.2.0"],
+            ["babel-plugin-import-static-files", "npm:1.0.4"],
             ["babel-plugin-transform-async-to-promises", "npm:0.8.15"],
             ["cross-env", "npm:7.0.3"],
             ["eslint", "npm:8.2.0"],
@@ -97,6 +98,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup-plugin-node-resolve", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:5.2.0"],
             ["rollup-plugin-peer-deps-external", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:2.2.4"],
             ["rollup-plugin-size", "npm:0.2.2"],
+            ["rollup-plugin-static-files", "npm:0.2.0"],
             ["rollup-plugin-svg", "npm:2.0.0"],
             ["rollup-plugin-terser", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:7.0.2"],
             ["rollup-plugin-visualizer", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:5.5.2"],
@@ -5448,6 +5450,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-jest", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:27.4.2"],
             ["babel-loader", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:8.2.3"],
             ["babel-plugin-const-enum", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:1.2.0"],
+            ["babel-plugin-import-static-files", "npm:1.0.4"],
             ["babel-plugin-transform-async-to-promises", "npm:0.8.15"],
             ["cross-env", "npm:7.0.3"],
             ["eslint", "npm:8.2.0"],
@@ -5477,6 +5480,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup-plugin-node-resolve", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:5.2.0"],
             ["rollup-plugin-peer-deps-external", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:2.2.4"],
             ["rollup-plugin-size", "npm:0.2.2"],
+            ["rollup-plugin-static-files", "npm:0.2.0"],
             ["rollup-plugin-svg", "npm:2.0.0"],
             ["rollup-plugin-terser", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:7.0.2"],
             ["rollup-plugin-visualizer", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:5.5.2"],
@@ -11565,6 +11569,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["babel-plugin-import-static-files", [
+        ["npm:1.0.4", {
+          "packageLocation": "./.yarn/cache/babel-plugin-import-static-files-npm-1.0.4-6637bbd439-408600ca1f.zip/node_modules/babel-plugin-import-static-files/",
+          "packageDependencies": [
+            ["babel-plugin-import-static-files", "npm:1.0.4"],
+            ["fs-extra", "npm:4.0.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["babel-plugin-istanbul", [
         ["npm:6.1.1", {
           "packageLocation": "./.yarn/cache/babel-plugin-istanbul-npm-6.1.1-df824055e4-cb4fd95738.zip/node_modules/babel-plugin-istanbul/",
@@ -12694,6 +12708,36 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/character-reference-invalid-npm-1.1.4-e5e17a1a38-20274574c7.zip/node_modules/character-reference-invalid/",
           "packageDependencies": [
             ["character-reference-invalid", "npm:1.1.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["cheerio", [
+        ["npm:1.0.0-rc.10", {
+          "packageLocation": "./.yarn/cache/cheerio-npm-1.0.0-rc.10-7461d63143-ace2f9c580.zip/node_modules/cheerio/",
+          "packageDependencies": [
+            ["cheerio", "npm:1.0.0-rc.10"],
+            ["cheerio-select", "npm:1.5.0"],
+            ["dom-serializer", "npm:1.3.2"],
+            ["domhandler", "npm:4.3.0"],
+            ["htmlparser2", "npm:6.1.0"],
+            ["parse5", "npm:6.0.1"],
+            ["parse5-htmlparser2-tree-adapter", "npm:6.0.1"],
+            ["tslib", "npm:2.3.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["cheerio-select", [
+        ["npm:1.5.0", {
+          "packageLocation": "./.yarn/cache/cheerio-select-npm-1.5.0-e3f0416bf1-d4506d8b9a.zip/node_modules/cheerio-select/",
+          "packageDependencies": [
+            ["cheerio-select", "npm:1.5.0"],
+            ["css-select", "npm:4.1.3"],
+            ["css-what", "npm:5.1.0"],
+            ["domelementtype", "npm:2.2.0"],
+            ["domhandler", "npm:4.3.0"],
+            ["domutils", "npm:2.8.0"]
           ],
           "linkType": "HARD",
         }]
@@ -16200,6 +16244,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
+        ["npm:4.0.3", {
+          "packageLocation": "./.yarn/cache/fs-extra-npm-4.0.3-2a1f6bc181-c5ae3c7043.zip/node_modules/fs-extra/",
+          "packageDependencies": [
+            ["fs-extra", "npm:4.0.3"],
+            ["graceful-fs", "npm:4.2.8"],
+            ["jsonfile", "npm:4.0.0"],
+            ["universalify", "npm:0.1.2"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:7.0.1", {
+          "packageLocation": "./.yarn/cache/fs-extra-npm-7.0.1-b33a5e53e9-141b9dccb2.zip/node_modules/fs-extra/",
+          "packageDependencies": [
+            ["fs-extra", "npm:7.0.1"],
+            ["graceful-fs", "npm:4.2.8"],
+            ["jsonfile", "npm:4.0.0"],
+            ["universalify", "npm:0.1.2"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:8.1.0", {
           "packageLocation": "./.yarn/cache/fs-extra-npm-8.1.0-197473387f-bf44f0e6ce.zip/node_modules/fs-extra/",
           "packageDependencies": [
@@ -19168,6 +19232,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["klaw-sync", [
+        ["npm:6.0.0", {
+          "packageLocation": "./.yarn/cache/klaw-sync-npm-6.0.0-251c1a2fa5-0da397f896.zip/node_modules/klaw-sync/",
+          "packageDependencies": [
+            ["klaw-sync", "npm:6.0.0"],
+            ["graceful-fs", "npm:4.2.8"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["kleur", [
         ["npm:3.0.3", {
           "packageLocation": "./.yarn/cache/kleur-npm-3.0.3-f6f53649a4-df82cd1e17.zip/node_modules/kleur/",
@@ -20970,6 +21044,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["npm:6.0.1", {
           "packageLocation": "./.yarn/cache/parse5-npm-6.0.1-70a35a494a-7d569a176c.zip/node_modules/parse5/",
           "packageDependencies": [
+            ["parse5", "npm:6.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["parse5-htmlparser2-tree-adapter", [
+        ["npm:6.0.1", {
+          "packageLocation": "./.yarn/cache/parse5-htmlparser2-tree-adapter-npm-6.0.1-60b4888f75-1848378b35.zip/node_modules/parse5-htmlparser2-tree-adapter/",
+          "packageDependencies": [
+            ["parse5-htmlparser2-tree-adapter", "npm:6.0.1"],
             ["parse5", "npm:6.0.1"]
           ],
           "linkType": "HARD",
@@ -23204,6 +23288,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["rollup-plugin-size", "npm:0.2.2"],
             ["size-plugin-core", "npm:0.0.7"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["rollup-plugin-static-files", [
+        ["npm:0.2.0", {
+          "packageLocation": "./.yarn/cache/rollup-plugin-static-files-npm-0.2.0-5e94fb221f-5d224981e5.zip/node_modules/rollup-plugin-static-files/",
+          "packageDependencies": [
+            ["rollup-plugin-static-files", "npm:0.2.0"],
+            ["cheerio", "npm:1.0.0-rc.10"],
+            ["fs-extra", "npm:7.0.1"],
+            ["klaw-sync", "npm:6.0.0"]
           ],
           "linkType": "HARD",
         }]

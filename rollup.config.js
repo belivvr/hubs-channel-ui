@@ -7,6 +7,7 @@ import commonJS from 'rollup-plugin-commonjs'
 import visualizer from 'rollup-plugin-visualizer'
 import replace from '@rollup/plugin-replace'
 import svg from 'rollup-plugin-svg'
+import staticFiles from 'rollup-plugin-static-files';
 
 const external = ['react', 'react-dom', '@belivvr/hubs-channel-ui']
 
@@ -43,6 +44,7 @@ export default inputSrcs
           commonJS(),
           externalDeps(),
           svg(),
+          staticFiles({ include: ['./src/assets'] }),
         ],
       },
       {
@@ -72,6 +74,7 @@ export default inputSrcs
             json: true,
           }),
           svg(),
+          staticFiles({ include: ['./src/assets'] }),
         ],
       },
     ]
