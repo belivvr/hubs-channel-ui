@@ -8,6 +8,7 @@ interface Props {
   locale?: string;
   messages?: Record<string, string>;
   value?: string;
+  error?: boolean;
   onChange?: (value: string) => void;
   onClick?: () => void;
 }
@@ -15,12 +16,13 @@ function renderForm({
   locale = 'en',
   messages,
   value = '',
+  error = false,
   onChange = () => {},
   onClick = () => {},
 }: Props) {
   render(
     <IntlProvider locale={locale} messages={messages}>
-      <Form value={value} onChange={onChange} onClick={onClick} />
+      <Form value={value} onChange={onChange} onClick={onClick} error={error} />
     </IntlProvider>
   );
 }

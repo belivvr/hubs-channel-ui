@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import Button from './Button';
+import ErrorMessage from './ErrorMessage';
 import Input from './Input';
 
 const divStyle: React.CSSProperties = {
@@ -20,12 +21,14 @@ const formStyle = (focus: boolean): React.CSSProperties => ({
 
 interface Props {
   value: string;
+  error: boolean;
   onChange: (value: string) => void;
   onClick: () => void;
 }
 
 export default function Form({
   value,
+  error,
   onChange,
   onClick,
 }: Props) {
@@ -37,6 +40,7 @@ export default function Form({
         <Input value={value} onChange={onChange} onFocus={setFocus} />
         <Button onClick={onClick} />
       </div>
+      <ErrorMessage visible={error} />
     </div>
   );
 }
