@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
+import Input from './Input';
 
 interface Props {
   Sidebar: React.FunctionComponent<{
@@ -12,7 +13,6 @@ interface Props {
     [key: string]: any;
   }>;
   onClose: () => void;
-  children: React.ReactNode;
 }
 
 export const defaultMessage = 'Channels';
@@ -24,20 +24,20 @@ export const defaultMessage = 'Channels';
  *   Sidebar={Sidebar}
  *   CloseButton={CloseButton}
  *   onClose={() => this.setSidebar(null)}
- * >
- *   //...
- * </ChannelContainer>
+ * />
  * ```
  */
 export default function ChannelContainer({
-  Sidebar, CloseButton, onClose, children,
+  Sidebar, CloseButton, onClose,
 }: Props): JSX.Element {
+  const [value, setValue] = useState<string>('');
+
   return (
     <Sidebar
       title={<FormattedMessage id="channel-sidebar.title" defaultMessage={defaultMessage} />}
       beforeTitle={<CloseButton onClick={onClose} />}
     >
-      {children}
+      <Input value={value} onChange={setValue} />
     </Sidebar>
   );
 }
