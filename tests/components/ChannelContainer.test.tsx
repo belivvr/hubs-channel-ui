@@ -76,6 +76,7 @@ describe('ChannelContainer', () => {
       'channel-sidebar.title': givenMessage,
       'channel-sidebar-container.entrance-button': '입장',
       'channel-sidebar-container.input-placeholder.private-channel': '프라이빗 채널을 입력하세요.',
+      'channel-sidebar-container.error-message': '존재하지 않는 채널입니다.',
     };
 
     it('Should renders provided message', () => {
