@@ -1,8 +1,10 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs';
 
-import Channel from '../../components/Channels/Channel';
+import Channels from '../../components/Channels';
 
-<Meta title="components/Channel" />
+<Meta title="components/Channels" />
+
+export const data = [...Array(10).keys()].map((i) => ({ hubId: `channel${i}`, children: `channel${i}` }));
 
 <Canvas>
   <Story name="dark theme">
@@ -18,7 +20,7 @@ import Channel from '../../components/Channels/Channel';
       document.head.appendChild(style);
       return (
         <div style={{ background: 'var(--active-text-color)' }}>
-          <Channel>channel</Channel>
+          <Channels data={data} />
         </div>
       );
     }}
@@ -37,7 +39,7 @@ import Channel from '../../components/Channels/Channel';
         }
       `;
       document.head.appendChild(style);
-      return <Channel>channel</Channel>;
+      return <Channels data={data} />;
     }}
   </Story>
 </Canvas>

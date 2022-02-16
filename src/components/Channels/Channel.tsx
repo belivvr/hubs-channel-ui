@@ -11,9 +11,10 @@ const style = (hover: boolean): React.CSSProperties => ({
   fontWeight: 700,
   color: hover ? 'var(--active-text-color)' : 'var(--text1-color)',
   backgroundColor: hover ? 'var(--active-color-hover)' : 'transparent',
+  textDecoration: 'none',
 });
 
-interface Props {
+export interface Props {
   url?: string;
   hubId?: string;
   children: React.ReactNode;
