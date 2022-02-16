@@ -1,6 +1,9 @@
 import React from 'react';
 
-import Icon from '../assets/icon.svg';
+import isDarkTheme from '../utils/isDarkTheme';
+
+import LightThemeIcon from '../assets/light-theme-icon.svg';
+import DarkThemeIcon from '../assets/dark-theme-icon.svg';
 
 interface PopoverChildren {
   togglePopover?: any;
@@ -44,7 +47,7 @@ export default function ChannelsButton({
     <Popover title="Channels">
       {({ popoverVisible }) => (
         <ToolbarButton
-          icon={<Icon />}
+          icon={isDarkTheme() ? <DarkThemeIcon /> : <LightThemeIcon />}
           selected={popoverVisible}
           onClick={() => toggleSidebar('channels')}
           label="Channels"
