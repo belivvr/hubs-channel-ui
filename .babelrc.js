@@ -33,6 +33,5 @@ module.exports = {
         ].replace(/^[^0-9]*/, ''),
       },
     ],
-    'import-static-files',
   ].filter(Boolean),
 }

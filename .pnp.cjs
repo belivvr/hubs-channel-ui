@@ -68,7 +68,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-jest", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:27.4.2"],
             ["babel-loader", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:8.2.3"],
             ["babel-plugin-const-enum", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:1.2.0"],
-            ["babel-plugin-import-static-files", "npm:1.0.4"],
             ["babel-plugin-transform-async-to-promises", "npm:0.8.15"],
             ["cross-env", "npm:7.0.3"],
             ["eslint", "npm:8.2.0"],
@@ -5450,7 +5449,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-jest", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:27.4.2"],
             ["babel-loader", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:8.2.3"],
             ["babel-plugin-const-enum", "virtual:7b10d8326a48c0eef32403e563b382a0793bab4ab501ac1914c0216424545a2a23835564b009f395a645496af676dfc7a0fb2dbf435dff16ec188b588cf1e8fd#npm:1.2.0"],
-            ["babel-plugin-import-static-files", "npm:1.0.4"],
             ["babel-plugin-transform-async-to-promises", "npm:0.8.15"],
             ["cross-env", "npm:7.0.3"],
             ["eslint", "npm:8.2.0"],
@@ -11569,16 +11567,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["babel-plugin-import-static-files", [
-        ["npm:1.0.4", {
-          "packageLocation": "./.yarn/cache/babel-plugin-import-static-files-npm-1.0.4-6637bbd439-408600ca1f.zip/node_modules/babel-plugin-import-static-files/",
-          "packageDependencies": [
-            ["babel-plugin-import-static-files", "npm:1.0.4"],
-            ["fs-extra", "npm:4.0.3"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["babel-plugin-istanbul", [
         ["npm:6.1.1", {
           "packageLocation": "./.yarn/cache/babel-plugin-istanbul-npm-6.1.1-df824055e4-cb4fd95738.zip/node_modules/babel-plugin-istanbul/",
@@ -16241,16 +16229,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["klaw", "npm:1.3.1"],
             ["path-is-absolute", "npm:1.0.1"],
             ["rimraf", "npm:2.7.1"]
-          ],
-          "linkType": "HARD",
-        }],
-        ["npm:4.0.3", {
-          "packageLocation": "./.yarn/cache/fs-extra-npm-4.0.3-2a1f6bc181-c5ae3c7043.zip/node_modules/fs-extra/",
-          "packageDependencies": [
-            ["fs-extra", "npm:4.0.3"],
-            ["graceful-fs", "npm:4.2.8"],
-            ["jsonfile", "npm:4.0.0"],
-            ["universalify", "npm:0.1.2"]
           ],
           "linkType": "HARD",
         }],
