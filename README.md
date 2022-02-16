@@ -63,8 +63,8 @@ Find `hub.js` in `toolbarCenter={` and paste under this
     Popover={Popover}
     ToolbarButton={ToolbarButton}
     toggleSidebar={this.toggleSidebar}
-    LightThemeIcon={<LightThemeIcon />}
-    DarkThemeIcon={<DarkThemeIcon />}
+    LightThemeIcon={<img src={LightThemeIcon} alt="" />}
+    DarkThemeIcon={<img src={DarkThemeIcon} alt="" />}
   />
 )}
 ```
