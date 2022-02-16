@@ -24,3 +24,10 @@ export function setTheme(theme?: Theme): void {
     },
   };
 }
+
+export function mockLocationHref(location: Object) {
+  jest.spyOn(window, "location", "get").mockReturnValue({
+    ...window.location,
+    ...location,
+  });
+}

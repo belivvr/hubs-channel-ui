@@ -1,10 +1,8 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs';
-import { action } from '@storybook/addon-actions';
-import { IntlProvider } from 'react-intl';
 
-import Input from '../components/Form/Input';
+import Channel from '../../components/Channels/Channel';
 
-<Meta title="components/Input" />
+<Meta title="components/Channel" />
 
 <Canvas>
   <Story name="dark theme">
@@ -12,16 +10,16 @@ import Input from '../components/Form/Input';
       const style = document.createElement('style');
       style.innerHTML = `
         :root {
-          --input-bg-color: #21242C;
-          --input-border-color: #5D646C;
-          --text1-color: #ffffff;
+          --text1-color: #FFFFFF;
+          --active-text-color: #2B313B;
+          --active-color-hover: #12A4ED;
         }
       `;
       document.head.appendChild(style);
       return (
-        <IntlProvider>
-          <Input />
-        </IntlProvider>
+        <div style={{ background: 'var(--active-text-color)' }}>
+          <Channel>channel</Channel>
+        </div>
       );
     }}
   </Story>
@@ -33,17 +31,13 @@ import Input from '../components/Form/Input';
       const style = document.createElement('style');
       style.innerHTML = `
         :root {
-          --input-bg-color: #FFFFFF;
-          --input-border-color: #868686;
           --text1-color: #000000;
+          --active-text-color: #FFFFFF;
+          --active-color-hover: #008BD1;
         }
       `;
       document.head.appendChild(style);
-      return (
-        <IntlProvider>
-          <Input />
-        </IntlProvider>
-      );
+      return <Channel>channel</Channel>;
     }}
   </Story>
 </Canvas>
