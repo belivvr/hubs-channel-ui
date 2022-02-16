@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
-import Input from './Form/Input';
+
+import type { Props as ChannelProps } from './Channels/Channel';
+import Channels from './Channels';
+import Form from './Form';
 
 interface Props {
   Sidebar: React.FunctionComponent<{
     title?: React.ReactNode;
     beforeTitle?: React.ReactNode;
+    children?: React.ReactNode;
     [key: string]: any;
   }>;
   CloseButton: React.FunctionComponent<{
     onClick?: () => void;
     [key: string]: any;
   }>;
+  data: ChannelProps[];
   onClose: () => void;
+  onClickPrivateChannelButton: (channel: string) => void;
 }
 
 export const defaultMessage = 'Channels';
@@ -28,7 +34,11 @@ export const defaultMessage = 'Channels';
  * ```
  */
 export default function ChannelContainer({
-  Sidebar, CloseButton, onClose,
+  Sidebar,
+  CloseButton,
+  data,
+  onClose,
+  onClickPrivateChannelButton,
 }: Props): JSX.Element {
   const [value, setValue] = useState<string>('');
 
@@ -37,7 +47,8 @@ export default function ChannelContainer({
       title={<FormattedMessage id="channel-sidebar.title" defaultMessage={defaultMessage} />}
       beforeTitle={<CloseButton onClick={onClose} />}
     >
-      <Input value={value} onChange={setValue} />
+      <Channels data={data} />
+      <Form value={value} onChange={setValue} onClick={() => onClickPrivateChannelButton(value)} />
     </Sidebar>
   );
 }

@@ -9,8 +9,8 @@ const style = (hover: boolean): React.CSSProperties => ({
   padding: '0 16px',
   fontSize: '12px',
   fontWeight: 700,
-  color: hover ? 'var(--active-text-color)' : 'var(--text1-color)',
-  backgroundColor: hover ? 'var(--active-color-hover)' : 'transparent',
+  color: 'var(--text1-color)',
+  backgroundColor: hover ? 'var(--list-bg-color-hover)' : 'transparent',
   textDecoration: 'none',
 });
 
