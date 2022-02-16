@@ -2,6 +2,8 @@ import { Meta, Canvas, Story } from '@storybook/addon-docs';
 import { action } from '@storybook/addon-actions';
 
 import ChannelsButton from '../components/ChannelsButton';
+import LightThemeIcon from '../assets/light-theme-icon.svg';
+import DarkThemeIcon from '../assets/dark-theme-icon.svg';
 
 <Meta
   title="components"
@@ -13,6 +15,7 @@ export function MockPopover({ title, children }) {
 export function MockToolbarButton({ onClick, icon }) {
   return <button type="button" onClick={onClick}>{icon}</button>;
 }
+global.APP = {};
 
 <Canvas>
   <Story name="ChannelsButton">
@@ -20,6 +23,8 @@ export function MockToolbarButton({ onClick, icon }) {
       Popover={MockPopover}
       ToolbarButton={MockToolbarButton}
       toggleSidebar={action('click')}
+      LightThemeIcon={LightThemeIcon}
+      DarkThemeIcon={DarkThemeIcon}
     />
   </Story>
 </Canvas>

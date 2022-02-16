@@ -2,9 +2,6 @@ import React from 'react';
 
 import isDarkTheme from '../utils/isDarkTheme';
 
-import LightThemeIcon from '../assets/light-theme-icon.svg';
-import DarkThemeIcon from '../assets/dark-theme-icon.svg';
-
 interface PopoverChildren {
   togglePopover?: any;
   openPopover?: any;
@@ -26,6 +23,8 @@ interface Props {
     [key: string]: any;
   }>;
   toggleSidebar: (sidebarId: string, otherState?: string) => void;
+  LightThemeIcon: any;
+  DarkThemeIcon: any;
 }
 
 /**
@@ -35,6 +34,8 @@ interface Props {
  *   Popover={Popover}
  *   ToolbarButton={ToolbarButton}
  *   toggleSidebar={toggleSidebar}
+ *   LightThemeIcon={LightThemeIcon}
+ *   DarkThemeIcon={DarkThemeIcon}
  * />
  * ```
  */
@@ -42,6 +43,8 @@ export default function ChannelsButton({
   Popover,
   ToolbarButton,
   toggleSidebar,
+  LightThemeIcon,
+  DarkThemeIcon,
 }: Props): JSX.Element {
   return (
     <Popover title="Channels">
