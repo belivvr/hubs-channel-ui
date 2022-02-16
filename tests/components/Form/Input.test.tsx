@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 
-import Input from '../../src/components/Input';
+import Input from '../../../src/components/Form/Input';
 
 interface Props {
   locale?: string;

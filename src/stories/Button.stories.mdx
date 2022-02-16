@@ -2,9 +2,9 @@ import { Meta, Canvas, Story } from '@storybook/addon-docs';
 import { action } from '@storybook/addon-actions';
 import { IntlProvider } from 'react-intl';
 
-import Input from '../components/Form/Input';
+import Button from '../components/Form/Button';
 
-<Meta title="components/Input" />
+<Meta title="components/Button" />
 
 <Canvas>
   <Story name="dark theme">
@@ -15,12 +15,15 @@ import Input from '../components/Form/Input';
           --input-bg-color: #21242C;
           --input-border-color: #5D646C;
           --text1-color: #ffffff;
+          --text5-color: #ffffff;
+          --accent4-color: #2B313B;
+          --accent4-color-hover: #5D646C;
         }
       `;
       document.head.appendChild(style);
       return (
         <IntlProvider>
-          <Input />
+          <Button />
         </IntlProvider>
       );
     }}
@@ -36,12 +39,15 @@ import Input from '../components/Form/Input';
           --input-bg-color: #FFFFFF;
           --input-border-color: #868686;
           --text1-color: #000000;
+          --text5-color: #FFFFFF;
+          --accent4-color: #007AB8;
+          --accent4-color-hover: #008BD1;
         }
       `;
       document.head.appendChild(style);
       return (
         <IntlProvider>
-          <Input />
+          <Button />
         </IntlProvider>
       );
     }}

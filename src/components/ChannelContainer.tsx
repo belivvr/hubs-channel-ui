@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
-import Input from './Input';
+import Input from './Form/Input';
 
 interface Props {
   Sidebar: React.FunctionComponent<{
