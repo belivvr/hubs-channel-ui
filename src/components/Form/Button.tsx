@@ -7,11 +7,8 @@ const buttonStyle = (hover: boolean): React.CSSProperties => ({
   color: 'var(--text5-color)',
   fontSize: '100%',
   backgroundColor: hover ? 'var(--accent4-color-hover)' : 'var(--accent4-color)',
-  border: '1px solid var(--input-border-color)',
+  border: 'none',
   borderLeft: 'none',
-  borderRadius: '8px',
-  borderTopLeftRadius: 0,
-  borderBottomLeftRadius: 0,
   boxSizing: 'border-box',
   transition: 'background-color .1s ease-in-out',
 });

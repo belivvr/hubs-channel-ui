@@ -27,4 +27,6 @@ function renderForm({
 
 test('Form renders well', () => {
   renderForm({});
+  fireEvent.focus(screen.getByRole('textbox'));
+  fireEvent.blur(screen.getByRole('textbox'));
 });

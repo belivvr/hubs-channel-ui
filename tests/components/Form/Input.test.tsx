@@ -9,16 +9,18 @@ interface Props {
   messages?: Record<string, string>;
   value?: string;
   onChange?: (value: string) => void;
+  onFocus?: (focus: boolean) => void;
 }
 function renderInput({
   locale = 'en',
   messages,
   value = '',
   onChange = () => {},
+  onFocus = () => {},
 }: Props) {
   render(
     <IntlProvider locale={locale} messages={messages}>
-      <Input value={value} onChange={onChange} />
+      <Input value={value} onChange={onChange} onFocus={onFocus} />
     </IntlProvider>
   )
 }
@@ -50,6 +52,34 @@ describe('Input', () => {
       renderInput({ locale: givenLocale, messages: givenMessages });
 
       expect(screen.getByPlaceholderText(givenMessage)).toBeInTheDocument();
+    });
+  });
+
+  context('When focus', () => {
+    const handleFocus: jest.Mock = jest.fn();
+
+    it('Should be calls given onFocus function', () => {
+      renderInput({ onFocus: handleFocus });
+
+      expect(handleFocus).not.toBeCalled();
+
+      fireEvent.focus(screen.getByRole('textbox'));
+
+      expect(handleFocus).toBeCalled();
+    });
+  });
+
+  context('When blur', () => {
+    const handleFocus: jest.Mock = jest.fn();
+
+    it('Should be calls given onFocus function', () => {
+      renderInput({ onFocus: handleFocus });
+
+      expect(handleFocus).not.toBeCalled();
+
+      fireEvent.blur(screen.getByRole('textbox'));
+
+      expect(handleFocus).toBeCalled();
     });
   });
 });

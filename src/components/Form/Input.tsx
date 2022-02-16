@@ -8,21 +8,20 @@ const inputStyle: React.CSSProperties = {
   color: 'var(--text1-color)',
   fontSize: '100%',
   backgroundColor: 'transparent',
-  border: '1px solid var(--input-border-color)',
+  border: 'none',
   borderRight: 'none',
-  borderRadius: '8px',
-  borderTopRightRadius: 0,
-  borderBottomRightRadius: 0,
   boxSizing: 'border-box',
+  outline: 'none',
 };
 
 interface Props {
   value: string;
   onChange: (value: string) => void;
+  onFocus: (focus: boolean) => void;
 }
 
 export default function Input({
-  value, onChange,
+  value, onChange, onFocus,
 }: Props): JSX.Element {
   const intl = useIntl();
 
@@ -36,6 +35,8 @@ export default function Input({
         id: 'channel-sidebar-container.input-placeholder.private-channel',
         defaultMessage: 'Insert Private Channel',
       })}
+      onFocus={() => onFocus(true)}
+      onBlur={() => onFocus(false)}
     />
   );
 }
