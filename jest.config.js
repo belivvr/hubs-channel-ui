@@ -63,7 +63,8 @@ module.exports = {
     '.stories.',
     '/__snapshots__/',
 
-    '/src/index.ts'
+    '/src/index.ts',
+    '/tests/',
   ],
   coverageThreshold: {
     global: {

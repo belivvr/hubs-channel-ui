@@ -1,29 +1,6 @@
-import type { Theme } from '../../src/utils/isDarkTheme';
+import { setTheme, setUserDefaultDarkMode } from '../testUtils';
 import isDarkTheme from '../../src/utils/isDarkTheme';
 
-function setUserDefaultDarkMode(matches: boolean): void {
-  window.matchMedia = () => ({
-    media: '',
-    onchange: () => {},
-    addListener: () => {},
-    removeListener: () => {},
-    addEventListener: () => {},
-    removeEventListener: () => {},
-    dispatchEvent: () => false,
-    matches,
-  });
-}
-function setTheme(theme?: Theme): void {
-  global.APP = {
-    store: {
-      state: {
-        preferences: {
-          theme,
-        },
-      },
-    },
-  };
-}
 
 beforeEach(() => {
   setTheme();
