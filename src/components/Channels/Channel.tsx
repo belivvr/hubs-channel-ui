@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import makeHubURL from './makeHubURL';
 
 const style = (hover: boolean): React.CSSProperties => ({
   display: 'flex',
@@ -13,12 +14,13 @@ const style = (hover: boolean): React.CSSProperties => ({
 });
 
 interface Props {
-  hubId: string;
+  url?: string;
+  hubId?: string;
   children: React.ReactNode;
 }
 
-export default function Item({ hubId, children }: Props): JSX.Element {
-  const href = hubId;
+export default function Item({ url, hubId, children }: Props): JSX.Element {
+  const href = url || makeHubURL(hubId || '');
   const [hover, setHover] = useState<boolean>(false);
 
   return (

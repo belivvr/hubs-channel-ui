@@ -1,11 +1,5 @@
 import makeHubURL from '../../../src/components/Channels/makeHubURL';
-
-function mockLocationHref(location: Object) {
-  jest.spyOn(window, "location", "get").mockReturnValue({
-    ...window.location,
-    ...location,
-  });
-}
+import { mockLocationHref } from '../../testUtils';
 
 beforeEach(() => {
   mockLocationHref({ href: 'http://locahost' });
