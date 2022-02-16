@@ -50,7 +50,7 @@ export default function ChannelsButton({
     <Popover title="Channels">
       {({ popoverVisible }) => (
         <ToolbarButton
-          icon={isDarkTheme() ? <DarkThemeIcon /> : <LightThemeIcon />}
+          icon={isDarkTheme() ? DarkThemeIcon : LightThemeIcon}
           selected={popoverVisible}
           onClick={() => toggleSidebar('channels')}
           label="Channels"

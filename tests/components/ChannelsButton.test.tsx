@@ -62,8 +62,8 @@ function renderChannelsButton({ toggleSidebar }: Props) {
     Popover={MockPopover}
     ToolbarButton={MockToolbarButton}
     toggleSidebar={toggleSidebar}
-    LightThemeIcon={() => <span>{lightTheme}</span>}
-    DarkThemeIcon={() => <span>{darkTheme}</span>}
+    LightThemeIcon={<span>{lightTheme}</span>}
+    DarkThemeIcon={<span>{darkTheme}</span>}
   />);
 }
 

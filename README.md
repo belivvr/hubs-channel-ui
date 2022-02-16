@@ -31,7 +31,12 @@ import { Sidebar } from "./sidebar/Sidebar";
 import { CloseButton } from "./input/CloseButton";
 import { Popover } from "./popover/Popover";
 
-import { ChannelContainer, ChannelsButton } from "@belivvr/hubs-channel-ui";
+import {
+  ChannelContainer,
+  ChannelsButton,
+  LightThemeIcon,
+  DarkThemeIcon,
+} from "@belivvr/hubs-channel-ui";
 ```
 
 ### ChannelContainer
@@ -58,6 +63,8 @@ Find `hub.js` in `toolbarCenter={` and paste under this
     Popover={Popover}
     ToolbarButton={ToolbarButton}
     toggleSidebar={this.toggleSidebar}
+    LightThemeIcon={<LightThemeIcon />}
+    DarkThemeIcon={<DarkThemeIcon />}
   />
 )}
 ```
