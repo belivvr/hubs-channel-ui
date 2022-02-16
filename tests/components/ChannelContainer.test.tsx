@@ -11,7 +11,7 @@ interface MockSidebarProps {
   children?: React.ReactNode;
 }
 interface MockCloseButtonProps {
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 function MockSidebar({ title, beforeTitle, children }: MockSidebarProps) {
@@ -30,7 +30,7 @@ function MockCloseButton({ onClick }: MockCloseButtonProps) {
 
 interface Props {
   onClose?: () => void;
-  onClickPrivateChannelButton?: () => void;
+  onClickPrivateChannelButton?: (channel: string) => void;
   locale?: string;
   messages?: Record<string, string>;
   data?: ChannelProps[];
@@ -41,7 +41,6 @@ interface Props {
 function renderChannelContainer({
   onClose,
   onClickPrivateChannelButton,
-  children,
   locale = 'en',
   messages,
   data = [],
@@ -56,9 +55,7 @@ function renderChannelContainer({
         onClose={onClose}
         onClickPrivateChannelButton={onClickPrivateChannelButton}
         data={data}
-      >
-        {children}
-      </ChannelContainer>
+      />
     </IntlProvider>,
   );
 }
@@ -66,7 +63,7 @@ function renderChannelContainer({
 describe('ChannelContainer', () => {
   context('When not provided language', () => {
     it('Should renders default message', () => {
-      renderChannelContainer({ onClose: () => {} });
+      renderChannelContainer({ onClickPrivateChannelButton: (channel: string) => { console.log(channel) } });
 
       expect(screen.getByText(defaultMessage)).toBeInTheDocument();
     });
@@ -83,7 +80,7 @@ describe('ChannelContainer', () => {
     };
 
     it('Should renders provided message', () => {
-      renderChannelContainer({ onClose: () => {}, locale: givenLocale, messages: givenMessages });
+      renderChannelContainer({ locale: givenLocale, messages: givenMessages });
 
       expect(screen.getByText(givenMessage)).toBeInTheDocument();
     });
@@ -118,5 +115,10 @@ describe('ChannelContainer', () => {
 
       expect(handleClickPrivateChannelButton).toBeCalled();
     });
+  });
+
+  it('is for coverage', () => {
+    renderChannelContainer({ usePrivateChannel: true });
+    fireEvent.click(screen.getByText('Entrance'));
   });
 });

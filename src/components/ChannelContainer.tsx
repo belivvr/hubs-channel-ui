@@ -20,7 +20,7 @@ interface Props {
   usePrivateChannel?: boolean;
   error?: boolean;
   onClose: () => void;
-  onClickPrivateChannelButton: (channel: string) => void;
+  onClickPrivateChannelButton?: (channel: string) => void;
 }
 
 export const defaultMessage = 'Channels';
@@ -45,7 +45,7 @@ export default function ChannelContainer({
   usePrivateChannel,
   error,
   onClose,
-  onClickPrivateChannelButton,
+  onClickPrivateChannelButton = () => {},
 }: Props): JSX.Element {
   const [value, setValue] = useState<string>('');
 
