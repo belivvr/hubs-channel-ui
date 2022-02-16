@@ -29,7 +29,6 @@ Add `hub.js` in under code.
 ```tsx
 import { Sidebar } from "./sidebar/Sidebar";
 import { CloseButton } from "./input/CloseButton";
-import { Popover } from "./popover/Popover";
 
 import {
   ChannelContainer,
@@ -70,9 +69,8 @@ Find `hub.js` in `toolbarCenter={` and paste under this
 ```tsx
 {entered && (
   <ChannelsButton
-    Popover={Popover}
     ToolbarButton={ToolbarButton}
-    onClick={() => () => this.toggleSidebar("channels")}
+    onClick={() => this.toggleSidebar("channels")}
     LightThemeIcon={<img src={LightThemeIcon} alt="" />}
     DarkThemeIcon={<img src={DarkThemeIcon} alt="" />}
   />

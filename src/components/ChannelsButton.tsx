@@ -1,25 +1,14 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import isDarkTheme from '../utils/isDarkTheme';
 
-interface PopoverChildren {
-  togglePopover?: any;
-  openPopover?: any;
-  closePopover?: any;
-  popoverVisible?: any;
-  triggerRef?: any;
-}
 interface Props {
-  Popover: React.FunctionComponent<{
-    title?: string;
-    children?: ({ popoverVisible }: PopoverChildren) => React.ReactNode;
-    [key: string]: any;
-  }>;
   ToolbarButton: React.FunctionComponent<{
     icon?: JSX.Element;
     selected?: any;
     onClick?: () => void;
-    label?: string;
+    label?: JSX.Element;
     [key: string]: any;
   }>;
   onClick: () => void;
@@ -40,22 +29,17 @@ interface Props {
  * ```
  */
 export default function ChannelsButton({
-  Popover,
   ToolbarButton,
   onClick,
   LightThemeIcon,
   DarkThemeIcon,
 }: Props): JSX.Element {
   return (
-    <Popover title="Channels">
-      {({ popoverVisible }) => (
-        <ToolbarButton
-          icon={isDarkTheme() ? DarkThemeIcon : LightThemeIcon}
-          selected={popoverVisible}
-          onClick={onClick}
-          label="Channels"
-        />
-      )}
-    </Popover>
+    <ToolbarButton
+      icon={isDarkTheme() ? DarkThemeIcon : LightThemeIcon}
+      onClick={onClick}
+      preset="accept4"
+      label={<FormattedMessage id="toolbar.channels-button" defaultMessage="Channels" />}
+    />
   );
 }

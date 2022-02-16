@@ -23,8 +23,6 @@ interface Props {
   onClickPrivateChannelButton?: (channel: string) => void;
 }
 
-export const defaultMessage = 'Channels';
-
 /**
  * @example
  * ```tsx
@@ -51,7 +49,7 @@ export default function ChannelContainer({
 
   return (
     <Sidebar
-      title={<FormattedMessage id="channel-sidebar.title" defaultMessage={defaultMessage} />}
+      title={<FormattedMessage id="channel-sidebar.title" defaultMessage="Channels" />}
       beforeTitle={<CloseButton onClick={onClose} />}
     >
       <Channels data={data} />
