@@ -1,0 +1,43 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs';
+
+import Channel from '../../components/Channels/Channel';
+
+<Meta title="components/Channel" />
+
+<Canvas>
+  <Story name="dark theme">
+    {() => {
+      const style = document.createElement('style');
+      style.innerHTML = `
+        :root {
+          --text1-color: #FFFFFF;
+          --active-text-color: #2B313B;
+          --active-color-hover: #12A4ED;
+        }
+      `;
+      document.head.appendChild(style);
+      return (
+        <div style={{ background: 'var(--active-text-color)' }}>
+          <Channel />
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="light theme">
+    {() => {
+      const style = document.createElement('style');
+      style.innerHTML = `
+        :root {
+          --text1-color: #000000;
+          --active-text-color: #FFFFFF;
+          --active-color-hover: #008BD1;
+        }
+      `;
+      document.head.appendChild(style);
+      return <Channel />;
+    }}
+  </Story>
+</Canvas>
