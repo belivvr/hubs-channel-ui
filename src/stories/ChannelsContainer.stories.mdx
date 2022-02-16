@@ -22,38 +22,62 @@ export function MockCloseButton({ onClick }) {
   return <button type="button" onClick={onClick}>close button</button>;
 }
 export const data = [...Array(50).keys()].map((i) => ({ hubId: `channel${i}`, children: `channel${i}` }));
+export function setDarkTheme() {
+  const style = document.createElement('style');
+  style.innerHTML = `
+    :root {
+      --text1-color: #FFFFFF;
+      --active-text-color: #2B313B;
+      --active-color-hover: #12A4ED;
+      --input-bg-color: #21242C;
+      --input-border-color: #5D646C;
+      --input-border-color-hover: #12A4ED;
+      --text1-color: #ffffff;
+      --text5-color: #ffffff;
+      --accent4-color: #2B313B;
+      --accent4-color-hover: #5D646C;
+      --list-bg-color-hover: #4B5562;
+    }
+  `;
+  document.head.appendChild(style);
+}
+export function setLightTheme() {
+  const style = document.createElement('style');
+  style.innerHTML = `
+    :root {
+      --text1-color: #000000;
+      --active-text-color: #FFFFFF;
+      --active-color-hover: #008BD1;
+      --input-bg-color: #FFFFFF;
+      --input-border-color: #868686;
+      --input-border-color-hover: #008BD1;
+      --text1-color: #000000;
+      --text5-color: #FFFFFF;
+      --accent4-color: #007AB8;
+      --accent4-color-hover: #008BD1;
+      --list-bg-color-hover: #E7E7E7;
+    }
+  `;
+  document.head.appendChild(style);
+}
+export const renderChannelContainer = (error) => (
+  <IntlProvider>
+    <ChannelContainer
+      Sidebar={MockSidebar}
+      CloseButton={MockCloseButton}
+      data={data}
+      onClose={() => {}}
+      onClickPrivateChannelButton={() => {}}
+      error={error}
+    />
+  </IntlProvider>
+);
 
 <Canvas>
   <Story name="dark theme">
     {() => {
-      const style = document.createElement('style');
-      style.innerHTML = `
-        :root {
-          --text1-color: #FFFFFF;
-          --active-text-color: #2B313B;
-          --active-color-hover: #12A4ED;
-          --input-bg-color: #21242C;
-          --input-border-color: #5D646C;
-          --input-border-color-hover: #12A4ED;
-          --text1-color: #ffffff;
-          --text5-color: #ffffff;
-          --accent4-color: #2B313B;
-          --accent4-color-hover: #5D646C;
-          --list-bg-color-hover: #4B5562;
-        }
-      `;
-      document.head.appendChild(style);
-      return (
-        <IntlProvider>
-          <ChannelContainer
-            Sidebar={MockSidebar}
-            CloseButton={MockCloseButton}
-            data={data}
-            onClose={() => {}}
-            onClickPrivateChannelButton={() => {}}
-          />
-        </IntlProvider>
-      );
+      setDarkTheme();
+      return renderChannelContainer();
     }}
   </Story>
 </Canvas>
@@ -61,34 +85,26 @@ export const data = [...Array(50).keys()].map((i) => ({ hubId: `channel${i}`, ch
 <Canvas>
   <Story name="light theme">
     {() => {
-      const style = document.createElement('style');
-      style.innerHTML = `
-        :root {
-          --text1-color: #000000;
-          --active-text-color: #FFFFFF;
-          --active-color-hover: #008BD1;
-          --input-bg-color: #FFFFFF;
-          --input-border-color: #868686;
-          --input-border-color-hover: #008BD1;
-          --text1-color: #000000;
-          --text5-color: #FFFFFF;
-          --accent4-color: #007AB8;
-          --accent4-color-hover: #008BD1;
-          --list-bg-color-hover: #E7E7E7;
-        }
-      `;
-      document.head.appendChild(style);
-      return (
-        <IntlProvider>
-          <ChannelContainer
-            Sidebar={MockSidebar}
-            CloseButton={MockCloseButton}
-            data={data}
-            onClose={() => {}}
-            onClickPrivateChannelButton={() => {}}
-          />
-        </IntlProvider>
-      );
+      setLightTheme();
+      return renderChannelContainer();
+    }}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="dark theme with error">
+    {() => {
+      setDarkTheme();
+      return renderChannelContainer(true);
+    }}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="light theme with error">
+    {() => {
+      setLightTheme();
+      return renderChannelContainer(true);
     }}
   </Story>
 </Canvas>

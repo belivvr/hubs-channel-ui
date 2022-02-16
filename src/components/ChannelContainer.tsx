@@ -17,6 +17,7 @@ interface Props {
     [key: string]: any;
   }>;
   data: ChannelProps[];
+  error: boolean;
   onClose: () => void;
   onClickPrivateChannelButton: (channel: string) => void;
 }
@@ -37,6 +38,7 @@ export default function ChannelContainer({
   Sidebar,
   CloseButton,
   data,
+  error,
   onClose,
   onClickPrivateChannelButton,
 }: Props): JSX.Element {
@@ -48,7 +50,12 @@ export default function ChannelContainer({
       beforeTitle={<CloseButton onClick={onClose} />}
     >
       <Channels data={data} />
-      <Form value={value} onChange={setValue} onClick={() => onClickPrivateChannelButton(value)} />
+      <Form
+        value={value}
+        error={error}
+        onChange={setValue}
+        onClick={() => onClickPrivateChannelButton(value)}
+      />
     </Sidebar>
   );
 }
