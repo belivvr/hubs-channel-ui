@@ -17,7 +17,8 @@ interface Props {
     [key: string]: any;
   }>;
   data: ChannelProps[];
-  error: boolean;
+  usePrivateChannel?: boolean;
+  error?: boolean;
   onClose: () => void;
   onClickPrivateChannelButton: (channel: string) => void;
 }
@@ -38,6 +39,7 @@ export default function ChannelContainer({
   Sidebar,
   CloseButton,
   data,
+  usePrivateChannel,
   error,
   onClose,
   onClickPrivateChannelButton,
@@ -50,12 +52,14 @@ export default function ChannelContainer({
       beforeTitle={<CloseButton onClick={onClose} />}
     >
       <Channels data={data} />
-      <Form
-        value={value}
-        error={error}
-        onChange={setValue}
-        onClick={() => onClickPrivateChannelButton(value)}
-      />
+      {usePrivateChannel && (
+        <Form
+          value={value}
+          error={error}
+          onChange={setValue}
+          onClick={() => onClickPrivateChannelButton(value)}
+        />
+      )}
     </Sidebar>
   );
 }

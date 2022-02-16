@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-const style = (visible: boolean): React.CSSProperties => ({
+const style = (visible?: boolean): React.CSSProperties => ({
   display: visible ? 'block' : 'none',
   marginTop: '10px',
   color: '#E1465F',
@@ -9,7 +9,7 @@ const style = (visible: boolean): React.CSSProperties => ({
 });
 
 interface Props {
-  visible: boolean;
+  visible?: boolean;
 }
 
 export default function ErrorMessage({ visible }: Props): JSX.Element {

@@ -21,7 +21,7 @@ const formStyle = (focus: boolean): React.CSSProperties => ({
 
 interface Props {
   value: string;
-  error: boolean;
+  error?: boolean;
   onChange: (value: string) => void;
   onClick: () => void;
 }

@@ -60,7 +60,7 @@ export function setLightTheme() {
   `;
   document.head.appendChild(style);
 }
-export const renderChannelContainer = (error) => (
+export const renderChannelContainer = (usePrivateChannel, error) => (
   <IntlProvider>
     <ChannelContainer
       Sidebar={MockSidebar}
@@ -68,6 +68,7 @@ export const renderChannelContainer = (error) => (
       data={data}
       onClose={() => {}}
       onClickPrivateChannelButton={() => {}}
+      usePrivateChannel={usePrivateChannel}
       error={error}
     />
   </IntlProvider>
@@ -95,7 +96,7 @@ export const renderChannelContainer = (error) => (
   <Story name="dark theme with error">
     {() => {
       setDarkTheme();
-      return renderChannelContainer(true);
+      return renderChannelContainer(true, true);
     }}
   </Story>
 </Canvas>
@@ -104,7 +105,7 @@ export const renderChannelContainer = (error) => (
   <Story name="light theme with error">
     {() => {
       setLightTheme();
-      return renderChannelContainer(true);
+      return renderChannelContainer(true, true);
     }}
   </Story>
 </Canvas>

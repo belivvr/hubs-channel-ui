@@ -34,6 +34,7 @@ interface Props {
   locale?: string;
   messages?: Record<string, string>;
   data?: ChannelProps[];
+  usePrivateChannel?: boolean;
   children?: React.ReactNode;
 }
 
@@ -44,12 +45,14 @@ function renderChannelContainer({
   locale = 'en',
   messages,
   data = [],
+  usePrivateChannel,
 }: Props) {
   return render(
     <IntlProvider locale={locale} messages={messages}>
       <ChannelContainer
         Sidebar={MockSidebar}
         CloseButton={MockCloseButton}
+        usePrivateChannel={usePrivateChannel}
         onClose={onClose}
         onClickPrivateChannelButton={onClickPrivateChannelButton}
         data={data}
@@ -104,7 +107,10 @@ describe('ChannelContainer', () => {
     const handleClickPrivateChannelButton: jest.Mock = jest.fn();
 
     it('Should be calls onClickPrivateChannelButton', () => {
-      renderChannelContainer({ onClickPrivateChannelButton: handleClickPrivateChannelButton });
+      renderChannelContainer({ 
+        usePrivateChannel: true,
+        onClickPrivateChannelButton: handleClickPrivateChannelButton,
+      });
 
       expect(handleClickPrivateChannelButton).not.toBeCalled();
 
