@@ -27,17 +27,17 @@ function MockToolbarButton({ onClick, icon }: ToolbarButtonProps): JSX.Element {
 }
 
 interface Props {
-  toggleSidebar: (sidebarId: string, otherState?: string) => void;
+  onClick?: () => void;
 }
 
 const lightTheme = 'light-theme-icon';
 const darkTheme = 'dark-theme-icon';
 
-function renderChannelsButton({ toggleSidebar }: Props) {
+function renderChannelsButton({ onClick = () => {} }: Props) {
   return render(<ChannelsButton
     Popover={MockPopover}
     ToolbarButton={MockToolbarButton}
-    toggleSidebar={toggleSidebar}
+    onClick={onClick}
     LightThemeIcon={<span>{lightTheme}</span>}
     DarkThemeIcon={<span>{darkTheme}</span>}
   />);
@@ -48,7 +48,7 @@ describe('ChannelsButton', () => {
     const givenToggleSidebar = jest.fn();
 
     it('Should be call toggleSidebar function', () => {
-      renderChannelsButton({ toggleSidebar: givenToggleSidebar });
+      renderChannelsButton({ onClick: givenToggleSidebar });
 
       expect(givenToggleSidebar).not.toBeCalled();
 
@@ -61,7 +61,7 @@ describe('ChannelsButton', () => {
   context('When is light theme', () => {
     it('Should renders light theme icon', () => {
       setTheme('hubs-default');
-      renderChannelsButton({ toggleSidebar: () => {} });
+      renderChannelsButton({});
 
       expect(screen.getByText(lightTheme)).toBeInTheDocument();
     });
@@ -70,7 +70,7 @@ describe('ChannelsButton', () => {
   context('When is dark theme', () => {
     it('Should renders dark theme icon', () => {
       setTheme('hubs-dark-mode');
-      renderChannelsButton({ toggleSidebar: () => {} });
+      renderChannelsButton({});
 
       expect(screen.getByText(darkTheme)).toBeInTheDocument();
     });

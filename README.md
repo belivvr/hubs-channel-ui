@@ -54,6 +54,7 @@ function handleClickPrivateChannelButton(channel) {
   <ChannelContainer
     Sidebar={Sidebar}
     CloseButton={CloseButton}
+    data={data}
     usePrivateChannel={usePrivateChannel}
     error={isPrivateChannelError}
     onClose={() => this.setSidebar(null)}
@@ -71,7 +72,7 @@ Find `hub.js` in `toolbarCenter={` and paste under this
   <ChannelsButton
     Popover={Popover}
     ToolbarButton={ToolbarButton}
-    toggleSidebar={this.toggleSidebar}
+    onClick={() => () => this.toggleSidebar("channels")}
     LightThemeIcon={<img src={LightThemeIcon} alt="" />}
     DarkThemeIcon={<img src={DarkThemeIcon} alt="" />}
   />

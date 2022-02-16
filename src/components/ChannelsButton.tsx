@@ -22,7 +22,7 @@ interface Props {
     label?: string;
     [key: string]: any;
   }>;
-  toggleSidebar: (sidebarId: string, otherState?: string) => void;
+  onClick: () => void;
   LightThemeIcon: any;
   DarkThemeIcon: any;
 }
@@ -42,7 +42,7 @@ interface Props {
 export default function ChannelsButton({
   Popover,
   ToolbarButton,
-  toggleSidebar,
+  onClick,
   LightThemeIcon,
   DarkThemeIcon,
 }: Props): JSX.Element {
@@ -52,7 +52,7 @@ export default function ChannelsButton({
         <ToolbarButton
           icon={isDarkTheme() ? DarkThemeIcon : LightThemeIcon}
           selected={popoverVisible}
-          onClick={() => toggleSidebar('channels')}
+          onClick={onClick}
           label="Channels"
         />
       )}
