@@ -2,9 +2,9 @@ import { Meta, Canvas, Story } from '@storybook/addon-docs';
 import { action } from '@storybook/addon-actions';
 import { IntlProvider } from 'react-intl';
 
-import Form from '../components/Form';
+import Button from '../../components/Form/Button';
 
-<Meta title="components/Form" />
+<Meta title="components/Form/Button" />
 
 <Canvas>
   <Story name="dark theme">
@@ -14,7 +14,6 @@ import Form from '../components/Form';
         :root {
           --input-bg-color: #21242C;
           --input-border-color: #5D646C;
-          --input-border-color-hover: #12A4ED;
           --text1-color: #ffffff;
           --text5-color: #ffffff;
           --accent4-color: #2B313B;
@@ -24,7 +23,7 @@ import Form from '../components/Form';
       document.head.appendChild(style);
       return (
         <IntlProvider>
-          <Form />
+          <Button />
         </IntlProvider>
       );
     }}
@@ -39,7 +38,6 @@ import Form from '../components/Form';
         :root {
           --input-bg-color: #FFFFFF;
           --input-border-color: #868686;
-          --input-border-color-hover: #008BD1;
           --text1-color: #000000;
           --text5-color: #FFFFFF;
           --accent4-color: #007AB8;
@@ -49,7 +47,7 @@ import Form from '../components/Form';
       document.head.appendChild(style);
       return (
         <IntlProvider>
-          <Form />
+          <Button />
         </IntlProvider>
       );
     }}
